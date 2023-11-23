@@ -11,9 +11,9 @@ zmqpubhashblock=tcp://127.0.0.1:28332
 
 4. **Suscribirse a eventos relacionados con la mempool**: El socket SUB se suscribe a los eventos "hashblock", que representan las notificionrs sobre todas las transacciones.
 
-5. **Recibir y procesar mensajes**: El programa entra en un bucle donde recibe y procesa continuamente mensajes. El primer mensaje que recibe es el canal de suscripción, que descarta. El segundo mensaje que recibe es la transacción en formato hexadecimal, la cual se pasa a string. Si hay un error al recibir cualquiera de los mensajes, el programa imprime el error y continúa con la siguiente iteración del bucle o devuelve el error.
+5. **Recibir y procesar mensajes**: El programa entra en un bucle donde recibe y procesa continuamente mensajes. El primer mensaje que recibe es el canal de suscripción, que descarta. El segundo mensaje que recibe es el hash del bloque de 32 bytes, la cual se pasa a string. La tercera parte es un numero de secuencia. Si hay un error al recibir cualquiera de los mensajes, el programa imprime el error y continúa con la siguiente iteración del bucle o devuelve el error.
 
-6. **Pausa**: El programa hace una pausa de 3 segundos para evitar el consumo excesivo de recursos.
+6. **Pausa**: El programa hace una pausa de 2 segundos para evitar el consumo excesivo de recursos.
 
 
 

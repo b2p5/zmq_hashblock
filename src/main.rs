@@ -57,7 +57,7 @@ fn mempool_subscriber() -> Result<(), Box<dyn std::error::Error>> {
             Ok(tx_hex) => {
                 // Convert bytes to a hexadecimal string
                 let hex_string = tx_hex.to_hex::<String>();
-                println!("Hash del bloque: {:?}", hex_string);
+                //println!("Hash del bloque: {:?}", hex_string);
 
                 process_hex_string(&hex_string);
 
