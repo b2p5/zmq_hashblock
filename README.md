@@ -1,5 +1,5 @@
 
-# Ejemplo de utilización la biblioteca ZeroMQ con hashtx 
+# Ejemplo de utilización la biblioteca ZeroMQ con hashblock 
 
 1. **Crear un contexto zmq**: El programa comienza creando un nuevo contexto ZeroMQ. Este contexto se utiliza para crear sockets ZeroMQ.
 
@@ -7,9 +7,9 @@
 
 3. **Conectar al nodo Bitcoin**: El socket SUB se conecta a un nodo de Bitcoin que se ejecuta en localhost en el puerto 28332. Si hay un error al conectar, el programa imprime el error y lo devuelve. 
 En el archivo ***bitcoin.conf*** se ha de incluir el comando: 
-zmqpubrawtx=tcp://127.0.0.1:28332
+zmqpubhashblock=tcp://127.0.0.1:28332
 
-4. **Suscribirse a eventos relacionados con la mempool**: El socket SUB se suscribe a los eventos "hashtx", que representan las notificionrs sobre todas las transacciones.
+4. **Suscribirse a eventos relacionados con la mempool**: El socket SUB se suscribe a los eventos "hashblock", que representan las notificionrs sobre todas las transacciones.
 
 5. **Recibir y procesar mensajes**: El programa entra en un bucle donde recibe y procesa continuamente mensajes. El primer mensaje que recibe es el canal de suscripción, que descarta. El segundo mensaje que recibe es la transacción en formato hexadecimal, la cual se pasa a string. Si hay un error al recibir cualquiera de los mensajes, el programa imprime el error y continúa con la siguiente iteración del bucle o devuelve el error.
 
@@ -19,10 +19,10 @@ zmqpubrawtx=tcp://127.0.0.1:28332
 
 *Resultado del script:*
 
-Hash: "2b7c9160f0ae3c5af8b76db60e4ec1e50313a689776a392d60a3d1a7f0817bb8"
+Hash: "00000000000000000000324a0860e13066d7beed9785d47523b46a64b6f380e8"
 
-Topic: "hashtx"
+Topic: "hashblock"
 
-Sequence number: 57160d00 -> "W\u{16}\r\0"
+Sequence number: a9000000 -> "W\u{16}\r\0"
 
 
