@@ -23,6 +23,6 @@ Hash: "00000000000000000000324a0860e13066d7beed9785d47523b46a64b6f380e8"
 
 Topic: "hashblock"
 
-Sequence number: a9000000 -> "W\u{16}\r\0"
+Sequence number: 09000000 -> "\t\0\0\0"
 
 
